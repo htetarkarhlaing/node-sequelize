@@ -45,7 +45,7 @@ const roleFetcher = async (req, res) => {
                   success: true,
                   message: "Role fetched successfully",
                 },
-                body: roles,
+                body: roles.getUsers(),
               });
         }
         else {
@@ -55,7 +55,7 @@ const roleFetcher = async (req, res) => {
                   success: true,
                   message: "Role is empty",
                 },
-                body: roles,
+                body: roles.getUsers(),
               });
         }
     })

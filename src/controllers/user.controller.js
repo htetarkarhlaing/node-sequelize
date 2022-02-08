@@ -1,14 +1,17 @@
 const Model = require("../models");
 
 const userCreator = async (req, res) => {
-  if (req.body.name && req.body.password && req.body.roleId) {
+  if (req.body.name && req.body.password) {
     Model.User.create({
       name: req.body.name,
       password: req.body.password,
       status: req.body.status,
-      roleId: req.body.roleId,
     })
       .then((user) => {
+        Model.UserRole.create({
+          userId: user.id,
+          roleId: req.body.roleId,
+        });
         return res.status(201).json({
           meta: {
             status: 201,
@@ -39,7 +42,9 @@ const userCreator = async (req, res) => {
 };
 
 const userFetcher = async (req, res) => {
-    Model.User.findAll()
+  Model.User.findAll({
+    include: [Model.Role],
+  })
     .then((users) => {
       if (users.length > 0) {
         return res.status(200).json({

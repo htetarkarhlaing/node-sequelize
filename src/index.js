@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //custom middlewares
-db.sync({ force: true }).then(() => {
+db.sync().then(() => {
   console.log(clc.cyanBright("Database connected!"));
 });
 

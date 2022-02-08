@@ -15,12 +15,7 @@ const User = db.define("users", {
   },
   status: {
     type: Sequelize.ENUM("active", "inactive"),
-  },
-  roleId: {
-    type: Sequelize.INTEGER,
-    refrences: "roles",
-    referencesKey: "id",
-  },
+  }
 });
 
 module.exports = User;
