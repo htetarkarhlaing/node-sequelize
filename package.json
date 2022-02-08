@@ -1,0 +1,35 @@
+{
+  "name": "node-sequelize",
+  "version": "1.0.0",
+  "description": "Sequelize ORM server with NodeJs",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon .",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htetarkarhlaing/node-sequelize.git"
+  },
+  "keywords": [
+    "Sequelize",
+    "ORM",
+    "Node",
+    "Js",
+    "Express"
+  ],
+  "author": "Htet Arkar Hlaing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/htetarkarhlaing/node-sequelize/issues"
+  },
+  "homepage": "https://github.com/htetarkarhlaing/node-sequelize#readme",
+  "dependencies": {
+    "cli-color": "^2.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.15.1"
+  }
+}
